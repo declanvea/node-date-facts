@@ -10,11 +10,13 @@ console.log("It is " + chalk.blueBright(day) + ", " + chalk.blueBright(dateTime)
 
 console.log("It is the " + chalk.cyan(first) + "th day of the year.");
 // ___________________________
-function secondCal(){
-let seconds = moment().format('s');
-  return seconds * 60 * 60;
-}
-console.log("It is " + chalk.yellow(secondCal()) + " seconds into the day.");
+
+let seconds = moment().get('seconds');
+let minutes = moment().get('minutes');
+let hours = moment().get('hours');
+let minuteConv = minutes*60;
+let hourConv = hours*60*60;
+console.log("It is " + chalk.yellow(seconds + minuteConv + hourConv) + " seconds into the day.");
 
 // ____________________________
 function dayLight(){
